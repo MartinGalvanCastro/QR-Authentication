@@ -40,6 +40,8 @@ public class SecurityConfig {
                 .logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler(HttpStatus.OK))
                 .and()
                 .authenticationProvider(authProvider)
+                .authorizeRequests(auth->
+                        auth.anyRequest().permitAll())
                 .build();
     }
 }

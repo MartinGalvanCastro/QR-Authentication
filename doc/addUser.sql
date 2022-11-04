@@ -1,0 +1,11 @@
+insert into app_users (id, name, email, password, app_role) values ('848fc00d-c441-4801-bcb7-2ea05d797837', 'Desi Rubinek', 'drubinek0@tumblr.com', 'kIc9c15e4atT', 'Project Manager');
+insert into app_users (id, name, email, password, app_role) values ('74d7dc5d-f6e4-4557-bbd2-1e8f60344dde', 'Rob Eastman', 'reastman1@multiply.com', 'C1AFuDsX7z1', 'Surveyor');
+insert into app_users (id, name, email, password, app_role) values ('6aa7f570-46b1-4f51-8251-aae8034f73ad', 'Isak Barringer', 'ibarringer2@g.co', 'XnenzfC', 'Supervisor');
+insert into app_users (id, name, email, password, app_role) values ('ece3903c-d7ad-4a1d-b22d-4da0ba85d4e3', 'Barbabra Pedrol', 'bpedrol3@scientificamerican.com', 'Zv6J65', 'Engineer');
+insert into app_users (id, name, email, password, app_role) values ('f474b088-f733-404e-86c4-3d551d355f4b', 'See Camp', 'scamp4@google.ca', 'zbKACKPZmF', 'Engineer');
+insert into app_users (id, name, email, password, app_role) values ('9aa5c92b-c91a-4be6-8a95-e3f87a37c58b', 'Rubin Coomber', 'rcoomber5@foxnews.com', 'Aq4nOH8DgxWY', 'Estimator');
+insert into app_users (id, name, email, password, app_role) values ('9ba650bf-aa29-4fc4-9c8c-6a9a6b6fbc60', 'Holly-anne Braybrooks', 'hbraybrooks6@nytimes.com', 'GUeB8WD70hEE', 'Construction Foreman');
+insert into app_users (id, name, email, password, app_role) values ('1d0f0cb1-176b-44bb-81b4-e241c0b8985c', 'Alvy de Quesne', 'ade7@ning.com', 'tbsWwpPEnd', 'Subcontractor');
+insert into app_users (id, name, email, password, app_role) values ('cf161b46-aa81-4e0c-b942-ae3967f10514', 'Maurene Waud', 'mwaud8@economist.com', 'Kdqx945Ie', 'Construction Manager');
+insert into app_users (id, name, email, password, app_role) values ('d07fd83b-49cd-47f6-bf76-1d9cd1b78dab', 'Freddie Bromell', 'fbromell9@discuz.net', 'TxoEU3KZP', 'Surveyor');
+commit;

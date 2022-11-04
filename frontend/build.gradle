@@ -5,26 +5,23 @@ plugins {
 group rootProject.group
 version rootProject.version
 
-def preinstalledNodeDistributionDirectory = file('/Users/marting/.nvm/versions/node/v18.12.1');
+buildDir './dist'
+
+def preinstalledNodeDistributionDirectory = file('/Users/marting/.nvm/versions/node/v18.12.1')
 if (preinstalledNodeDistributionDirectory == null) {
-    throw new GradleException("You must set variable 'preinstalledNodeDistributionDirectory' in the 'build.gradle' file.");
+    throw new GradleException("You must set variable 'preinstalledNodeDistributionDirectory' in the 'build.gradle' file.")
 }
 
 frontend {
     nodeDistributionProvided = true
     nodeInstallDirectory = preinstalledNodeDistributionDirectory
 
-    assembleScript = 'run build'
-    cleanScript = 'run clean'
-    checkScript = 'run check'
-
     yarnEnabled = true
     yarnVersion = 'latest'
 
     installScript = 'install'
+    assembleScript = 'run build'
     cleanScript = 'run clean'
-    checkScript = 'run check'
-    publishScript = 'run publish'
 
     packageJsonDirectory = projectDir
     verboseModeEnabled = false

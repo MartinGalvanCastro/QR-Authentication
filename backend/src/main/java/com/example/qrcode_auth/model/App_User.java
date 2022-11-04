@@ -32,6 +32,7 @@ public class App_User implements Serializable {
 
     private String password;
 
+    @Column(name = "app_role")
     private String role;
 
 /*

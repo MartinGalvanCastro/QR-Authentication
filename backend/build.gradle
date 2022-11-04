@@ -7,7 +7,6 @@ plugins {
 
 group rootProject.group
 version rootProject.version
-sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -37,12 +36,12 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 }
 
 tasks.register('processFrontendResources', Copy) {
     // Directory containing the artifacts in the frontend project
-    def frontendBuildDir = file("${project(':frontend').buildDir}/www")
+    def frontendBuildDir = file("${project(':frontend').buildDir}")
     // Directory where the frontend artifacts must be copied to be packaged alltogether with the backend by the 'war'
     // plugin.
     def frontendResourcesDir = file("${project.buildDir}/resources/main/public")
