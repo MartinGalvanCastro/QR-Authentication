@@ -1,22 +1,43 @@
+import org.gradle.internal.os.OperatingSystem;
+
 plugins {
     id 'org.siouan.frontend-jdk11'
 }
+
+
 
 group rootProject.group
 version rootProject.version
 
 buildDir './dist'
 
-def preinstalledNodeDistributionDirectory = file('/Users/marting/.nvm/versions/node/v18.12.1')
+static def getNodeDirectory(){
+    def result = ''
+    if(OperatingSystem.current().isWindows()){
+        result = "where node".execute().text.replace("node.exe","").trim()
+
+    }
+    else if(OperatingSystem.current().isMacOsX() || OperatingSystem.current().isLinux()){
+        result "which node".execute().text.replace("node","").trim()
+    }
+
+    return result
+}
+def preinstalledNodeDistributionDirectory = file(getNodeDirectory())
+
+
 if (preinstalledNodeDistributionDirectory == null) {
     throw new GradleException("You must set variable 'preinstalledNodeDistributionDirectory' in the 'build.gradle' file.")
 }
 
+
+
 frontend {
+
     nodeDistributionProvided = true
     nodeInstallDirectory = preinstalledNodeDistributionDirectory
 
-    yarnEnabled = true
+    yarnEnabled = false
     yarnVersion = 'latest'
 
     installScript = 'install'
@@ -26,3 +47,6 @@ frontend {
     packageJsonDirectory = projectDir
     verboseModeEnabled = false
 }
+
+
+
