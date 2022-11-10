@@ -12,7 +12,8 @@ import LoginForm from "./component/forms/LoginForm";
 import SignUpForm from "./component/forms/SignUpForm";
 import UserTable from "./component/tables/users/UserTable";
 import {StompSessionProvider} from "react-stomp-hooks";
-import WebSocketDemo from "./component/QRCode/QRCode";
+import WebSocketDemo from "./component/QRCode/WSDemo";
+import QRScanner from "./component/QRCode/QRScanner";
 
 const Welcome = () => {
     // noinspection TypeScriptValidateTypes
@@ -45,6 +46,9 @@ function App() {
                                 <Nav.Link as={Link} to="/ws">WebSocket Demo</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
+                                <Nav.Link as={Link} to="/qr_scan">QR Scanner</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
                                 <Nav.Link as={Link} to="/credentials">Login with Credentials</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
@@ -59,6 +63,7 @@ function App() {
                         <Routes>
                             <Route path={"/"} element={<Welcome/>}/>
                             <Route path={"/ws"} element={<WebSocketDemo/>}/>
+                            <Route path={"/qr_scan"} element={<QRScanner/>}/>
                             <Route path={"/credentials"} element={<LoginForm/>}/>
                             <Route path={"/users"} element={<UserTable/>}/>
                             <Route path={"/sign_up"} element={<SignUpForm/>}/>

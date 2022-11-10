@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdece7e5-0b64-4040-9e15-8889303a2783" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/config/ConfigConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/config/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/WSController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/dto/ws/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SetupProxy.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/QRCode/QRCode.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/error/ErrorToast.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/tables/users/UserTable.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/ErrorMessage.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/WSMessage.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/AuthService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/QRCode/QRScanner.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/QRCode/ViewFinder.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/7.5.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.5.1/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/7.5.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.5.1/checksums/sha1-checksums.bin" afterDir="false" />
@@ -22,31 +13,16 @@
       <change beforePath="$PROJECT_DIR$/../.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.yarn/releases/yarn-3.0.0.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.yarnrc.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/build/resources/main/templates/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/config/ConfigBeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/config/ConfigBeans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/CRUDControllerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/CRUDControllerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/QRController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/QRController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/dto/MessageDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/dto/MessageDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/dto/UserDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/forms/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/forms/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/forms/SignUpForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/forms/SignUpForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/tables/users/UserTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/tables/users/UserTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/QRCode/QRCode.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/QRCode/WSDemo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +35,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -110,7 +86,7 @@
       <workItem from="1667918966410" duration="12170000" />
       <workItem from="1667953120441" duration="5972000" />
       <workItem from="1668005212438" duration="14902000" />
-      <workItem from="1668102027608" duration="4700000" />
+      <workItem from="1668102027608" duration="9439000" />
     </task>
     <servers />
   </component>

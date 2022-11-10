@@ -41,7 +41,11 @@ dependencies {
     //QR Code
     implementation 'com.google.zxing:core:3.5.1'
     implementation 'com.google.zxing:javase:3.5.1'
-    implementation 'org.postgresql:postgresql:42.5.0'
+
+    //DB
+    //implementation 'org.postgresql:postgresql:42.5.0'
+    implementation 'com.h2database:h2'
+
 
     //TESTING
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

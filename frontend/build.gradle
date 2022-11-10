@@ -21,10 +21,24 @@ static def getNodeDirectory(){
         result "which node".execute().text.replace("node","").trim()
     }
 
-    return result
+    return result.toString()
 }
-def preinstalledNodeDistributionDirectory = file(getNodeDirectory())
 
+static def getYarnDirectory(){
+def result = ''
+    if(OperatingSystem.current().isWindows()){
+        result = "where yarn.cmd".execute().text.replace("bin\\yarn.cmd","").trim()
+    }
+    else if(OperatingSystem.current().isMacOsX() || OperatingSystem.current().isLinux()){
+        result "which yarn".execute().text.replace("yarn","").trim()
+    }
+
+    return result.toString()
+}
+
+
+def preinstalledNodeDistributionDirectory = file(getNodeDirectory())
+def preinstalledYarnDistributionDirectory = file(getYarnDirectory())
 
 if (preinstalledNodeDistributionDirectory == null) {
     throw new GradleException("You must set variable 'preinstalledNodeDistributionDirectory' in the 'build.gradle' file.")
@@ -37,8 +51,10 @@ frontend {
     nodeDistributionProvided = true
     nodeInstallDirectory = preinstalledNodeDistributionDirectory
 
-    yarnEnabled = !OperatingSystem.current().isWindows()
-    yarnVersion = 'latest'
+    yarnEnabled = true
+    yarnVersion='latest'
+    yarnDistributionProvided = true
+    yarnInstallDirectory=preinstalledYarnDistributionDirectory
 
     installScript = 'install'
     assembleScript = 'run build'
