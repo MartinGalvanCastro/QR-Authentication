@@ -9,6 +9,8 @@ import {
 import { BrowserRouter } from "react-router-dom";
 import {ReactQueryDevtools} from "react-query/devtools";
 
+
+
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

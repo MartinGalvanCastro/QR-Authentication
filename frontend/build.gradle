@@ -37,7 +37,7 @@ frontend {
     nodeDistributionProvided = true
     nodeInstallDirectory = preinstalledNodeDistributionDirectory
 
-    yarnEnabled = false
+    yarnEnabled = !OperatingSystem.current().isWindows()
     yarnVersion = 'latest'
 
     installScript = 'install'

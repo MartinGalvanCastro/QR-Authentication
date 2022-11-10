@@ -31,6 +31,8 @@ public class QRController {
             ) {
     }
 
+
+
     @GetMapping(
             path = "/qr_sample",
             produces = MediaType.IMAGE_JPEG_VALUE

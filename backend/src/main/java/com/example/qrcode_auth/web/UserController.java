@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/users/")
+@RequestMapping("/api/users")
 public class UserController implements CRUDControllerInterface<ListUserDTO, CreateUserDTO>{
 
     private final UserService userService;

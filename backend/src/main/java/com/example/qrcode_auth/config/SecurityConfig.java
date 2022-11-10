@@ -31,6 +31,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
+                .cors().disable()
                 .csrf().disable()
                 .sessionManagement().maximumSessions(2).and()
                 .and()

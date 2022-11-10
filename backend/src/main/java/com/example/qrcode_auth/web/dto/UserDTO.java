@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import com.example.qrcode_auth.model.App_User;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
@@ -21,6 +22,7 @@ public class UserDTO implements Serializable {
 
     @NotNull
     @NotEmpty
+    @Email
     private String email;
 
     private String role;

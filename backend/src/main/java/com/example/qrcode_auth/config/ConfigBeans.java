@@ -20,4 +20,5 @@ public class ConfigBeans {
     public HttpMessageConverter<BufferedImage> httpMessageConverter() {
         return new BufferedImageHttpMessageConverter();
     }
+
 }

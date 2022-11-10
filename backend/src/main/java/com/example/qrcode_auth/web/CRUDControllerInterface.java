@@ -10,7 +10,6 @@ import java.util.List;
  * @param <DTO> Basic DTO
  * @param <CRDTO> Creation DTO
  */
-@RestController
 public interface CRUDControllerInterface<DTO,CRDTO> {
 
     /**
@@ -21,7 +20,7 @@ public interface CRUDControllerInterface<DTO,CRDTO> {
      *     Reponse Body: List of DTO
      * </pre>
      */
-    @GetMapping("/")
+    @GetMapping()
     ResponseEntity<List<DTO>> getAll();
 
     /**
