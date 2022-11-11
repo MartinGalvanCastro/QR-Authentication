@@ -41,8 +41,9 @@ public class SecurityConfig {
                 .logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler(HttpStatus.OK))
                 .and()
                 .authenticationProvider(authProvider)
-                .authorizeRequests(auth->
-                        auth.anyRequest().permitAll())
+                .authorizeRequests(auth -> auth.
+                        antMatchers("/api/users").authenticated().
+                        anyRequest().permitAll())
                 .build();
     }
 }

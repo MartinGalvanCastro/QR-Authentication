@@ -1,5 +1,5 @@
 import './App.css'
-import React from "react";
+import React, {useState} from "react";
 import {Container, Card, Nav} from "react-bootstrap";
 import {
     Routes,
@@ -11,9 +11,11 @@ import CardBody from "./component/card/CardBody";
 import LoginForm from "./component/forms/LoginForm";
 import SignUpForm from "./component/forms/SignUpForm";
 import UserTable from "./component/tables/users/UserTable";
-import {StompSessionProvider} from "react-stomp-hooks";
+import {StompSessionProvider, useSubscription, withSubscription} from "react-stomp-hooks";
 import WebSocketDemo from "./component/QRCode/WSDemo";
 import QRScanner from "./component/QRCode/QRScanner";
+import QRCodeDemo from "./component/QRCode/QRCode";
+import {WSQRCode} from "./model/WSQRCode";
 
 const Welcome = () => {
     // noinspection TypeScriptValidateTypes
@@ -30,14 +32,23 @@ const Welcome = () => {
 
 
 function App() {
-    return (<StompSessionProvider
-            url={"/ws"}
-            debug={(str) => {
-                console.log(str);
-            }}
-            connectionTimeout={10*1000}
-            onStompError={(err:any) => console.log(err)}
-            onWebSocketError={(err:any) => console.log(err)}>
+
+    const [message,setMessage] = useState<WSQRCode>({
+        sessionID:"",
+        byteArray:""
+    })
+
+    useSubscription("/app/qr", (message) => {
+        console.log(message)
+        if (message.body){
+            setMessage(JSON.parse(message.body));}
+        message.ack()
+    });
+
+
+
+    return (
+
             <Container className={"align-self-center d-flex justify-content-center"}>
                 <Card className={"w-30"}>
                     <Card.Header>
@@ -47,6 +58,9 @@ function App() {
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link as={Link} to="/qr_scan">QR Scanner</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link as={Link} to="/qr_code">QR Code</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link as={Link} to="/credentials">Login with Credentials</Nav.Link>
@@ -63,7 +77,9 @@ function App() {
                         <Routes>
                             <Route path={"/"} element={<Welcome/>}/>
                             <Route path={"/ws"} element={<WebSocketDemo/>}/>
-                            <Route path={"/qr_scan"} element={<QRScanner/>}/>
+                            {/* Add sessionID prop for debbuging if server sends authToken to correct server*/}
+                            <Route path={"/qr_scan"} element={<QRScanner />}/>
+                            <Route path={"/qr_code"} element={<QRCodeDemo sessionID={message.sessionID} byteArray={message.byteArray}/>}/>
                             <Route path={"/credentials"} element={<LoginForm/>}/>
                             <Route path={"/users"} element={<UserTable/>}/>
                             <Route path={"/sign_up"} element={<SignUpForm/>}/>
@@ -72,7 +88,6 @@ function App() {
                     </div>
                 </Card>
             </Container>
-        </StompSessionProvider>
     )
 }
 

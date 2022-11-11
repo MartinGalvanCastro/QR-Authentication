@@ -2,27 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdece7e5-0b64-4040-9e15-8889303a2783" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/QRCode/QRScanner.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/QRCode/ViewFinder.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/7.5.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.5.1/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/7.5.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.5.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/dto/QRLoginDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/dto/ws/QRMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/QRLoginMessage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/WSQRCode.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/config/WebSocketConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/service/QRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/service/QRService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/QRController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/QRController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/WSController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/qrcode_auth/web/WSController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/bootJarMainClassName" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/reports/tests/test/classes/com.example.qrcode_auth.QrcodeAuthApplicationTests.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/reports/tests/test/css/base-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/reports/tests/test/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/reports/tests/test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/reports/tests/test/js/report.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/reports/tests/test/packages/com.example.qrcode_auth.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/resources/main/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/resources/main/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/test-results/test/TEST-com.example.qrcode_auth.QrcodeAuthApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/test-results/test/binary/output.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/test-results/test/binary/output.bin.idx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/test-results/test/binary/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/tmp/bootJar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/tmp/jar/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/QRCode/QRCode.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/QRCode/WSDemo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/QRCode/QRScanner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/QRCode/QRScanner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/AuthService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AuthService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +55,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="CSS File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -52,18 +72,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Coding/Qrcode_auth/frontend&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;yarn:package.json:typescript&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/Coding/QR-Authentication/frontend",
+    "list.type.of.created.stylesheet": "CSS",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "E:\\Coding\\QR-Authentication\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -87,6 +107,7 @@
       <workItem from="1667953120441" duration="5972000" />
       <workItem from="1668005212438" duration="14902000" />
       <workItem from="1668102027608" duration="9439000" />
+      <workItem from="1668181344570" duration="11282000" />
     </task>
     <servers />
   </component>

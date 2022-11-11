@@ -1,5 +1,6 @@
 import  axios from "axios";
 import {Login, Register} from "../model/AppUser";
+import {QRLoginMessage} from "../model/QRLoginMessage";
 
 
 export const loginRequest = (payload:Login)=>{
@@ -22,6 +23,14 @@ export const getUsersRequest = () =>{
     return axios.request({
         url:'/api/users',
         method:'GET',
+    })
+}
+
+export const postAuthToken = (payload:QRLoginMessage) =>{
+    return axios.request({
+        data:payload,
+        url:'/api/qr_login',
+        method:'POST'
     })
 }
 
