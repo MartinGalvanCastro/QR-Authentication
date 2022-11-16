@@ -1,17 +1,18 @@
 pluginManagement {
-    plugins {
-        id 'java'
-        id 'war'
-        id 'org.springframework.boot' version '2.4.5'
-        id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-        id "org.siouan.frontend-jdk11" version "5.3.0"
-    }
     repositories {
         gradlePluginPortal()
+        mavenCentral()
+        // add mavenLocal() if you are using a locally built version of the plugin
+    }
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id.startsWith('com.google.cloud.tools.appengine')) {
+                useModule("com.google.cloud.tools:appengine-gradle-plugin:${requested.version}")
+            }
+        }
     }
 }
 
-rootProject.name = 'Qrcode_auth'
-include 'backend'
-include 'frontend'
+
+rootProject.name = 'QR_Auth'
 

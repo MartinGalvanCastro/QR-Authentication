@@ -1,4 +1,154 @@
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+import org.gradle.internal.os.OperatingSystem;
+
+plugins {
+    id 'java'
+    id 'com.google.cloud.tools.appengine' version '2.4.4'
+    id 'org.springframework.boot' version '2.7.5'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'org.siouan.frontend-jdk11' version '5.3.0'
+}
 
 
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+jar {
+    enabled = false
+}
+
+springBoot {
+    mainClass  = 'com.example.qrcode_auth.QrcodeAuthApplication'
+}
+
+
+dependencies {
+    //SPRING DEP
+    implementation('org.springframework.boot:spring-boot-starter-web'){
+        exclude(group:'org.springframework.boot',module:'spring-boot-starter-tomcat')
+    }
+    implementation 'com.google.appengine:appengine-api-1.0-sdk:2.0.10'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation  'org.springframework.boot:spring-boot-starter-actuator'
+    implementation  'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation  'org.springframework.boot:spring-boot-starter-security'
+    implementation  'org.springframework.session:spring-session-core'
+    implementation  'org.hibernate:hibernate-validator:8.0.0.Final'
+    implementation  'org.thymeleaf:thymeleaf:3.0.15.RELEASE'
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+    implementation  'org.springframework.security:spring-security-messaging'
+    implementation('org.springframework.boot:spring-boot-starter-websocket'){
+        exclude(group:'org.springframework.boot',module:'spring-boot-starter-tomcat')
+    }
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    //QR Code
+    implementation 'com.google.zxing:core:3.5.1'
+    implementation 'com.google.zxing:javase:3.5.1'
+
+    //DB
+    //implementation 'org.postgresql:postgresql:42.5.0'
+    implementation  'com.h2database:h2'
+
+
+    // TEST DEP
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+
+    //SPRING RUNTIME
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    implementation 'org.springframework.boot:spring-boot-starter-jetty'
+}
+
+
+
+appengine {
+    deploy {   // deploy configuration
+        stopPreviousVersion = true  // default - stop the current version
+        promote = true              // default - & make this the current version
+        projectId='GCLOUD_CONFIG'
+        version = 'GCLOUD_CONFIG'
+    }
+    stage{
+        artifact = "${project.buildDir}/libs/QR_Auth-1.0-SNAPSHOT.jar"
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+group 'com.qrsample'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 11     // App Engine Flexible uses Java 8
+targetCompatibility = 11     // App Engine Flexible uses Java 8
+
+/***********************************************************
+ ***************** FRONT END BUILD *************************
+ ***********************************************************/
+
+static def getNodeDirectory(){
+    def result = ''
+    if(OperatingSystem.current().isWindows()){
+        result = "where node".execute().text.replace("node.exe","").trim()
+
+    }
+    else if(OperatingSystem.current().isMacOsX() || OperatingSystem.current().isLinux()){
+        result "which node".execute().text.replace("node","").trim()
+    }
+
+    return result.toString()
+}
+
+static def getYarnDirectory(){
+    def result = ''
+    if(OperatingSystem.current().isWindows()){
+        result = "where yarn.cmd".execute().text.replace("bin\\yarn.cmd","").trim()
+    }
+    else if(OperatingSystem.current().isMacOsX() || OperatingSystem.current().isLinux()){
+        result "which yarn".execute().text.replace("yarn","").trim()
+    }
+
+    return result.toString()
+}
+
+def preinstalledNodeDistributionDirectory = file(getNodeDirectory())
+def preinstalledYarnDistributionDirectory = file(getYarnDirectory())
+
+if (preinstalledNodeDistributionDirectory == null) {
+    throw new GradleException("Node pre installed distribution not found")
+}
+
+if (preinstalledYarnDistributionDirectory == null) {
+    throw new GradleException("Yarn pre installed distribution not found")
+}
+
+
+frontend {
+    nodeDistributionProvided = true
+    nodeInstallDirectory = preinstalledNodeDistributionDirectory
+
+    yarnEnabled = true
+    yarnVersion='latest'
+    yarnDistributionProvided = true
+    yarnInstallDirectory=preinstalledYarnDistributionDirectory
+
+    installScript = 'install'
+    assembleScript = 'run build'
+    cleanScript = 'run clean'
+
+    packageJsonDirectory = file("${project.getProjectDir()}/src/main/ts")
+    verboseModeEnabled = false
+}
+
+tasks.named('processResources') {
+    dependsOn project.tasks.named("assembleFrontend")
+}
