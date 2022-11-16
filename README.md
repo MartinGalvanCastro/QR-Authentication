@@ -1,6 +1,8 @@
 QR Auth Login
 ---
 
+### URL: https://snappy-thought-287317.uc.r.appspot.com
+
 ## Description:
 Authentication via QR code inspired on WhatsApp Web QR Login.
 ---
